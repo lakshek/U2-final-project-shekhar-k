@@ -13,4 +13,6 @@ Users can explore essential early development themes, reflect through guided jou
 Whether you’re a guest exploring or a registered user engaging deeply,  
 > *every moment matters to your child.*  
 > 
->*every choice you make matters to your child.*
+>*every choice you make matters to your child.*  
+
+## Technologies Used
