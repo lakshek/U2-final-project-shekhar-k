@@ -1,49 +1,23 @@
-package com.example.wired2learn.model;
+package com.example.wired2learn.dto;
 
-import jakarta.persistence.*;
-
-import java.time.LocalDateTime;
-
-@Entity
-@Table(name = "users")
-public class User {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(name = "user_name", nullable = false)
+public class UserRequestDTO {
     private String name;
-
-    @Column(name = "user_email", nullable = false, unique = true)
     private String email;
-
-    @Column(name = "user_password", nullable = false)
     private String password;
-
-    @Column(name = "user_role", nullable = false)
     private String role;
 
-    @Column(name = "created_at", nullable = false)
-    private LocalDateTime createdAt;
-
     // Constructors
-    public User() {
+    public UserRequestDTO() {
     }
 
-    public User(String name, String email, String password, String role) {
+    public UserRequestDTO(String name, String email, String password, String role) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.role = role;
-        this.createdAt = LocalDateTime.now();
     }
 
     // Getters and Setters
-    public Long getId() {
-        return id;
-    }
-
     public String getName() {
         return name;
     }
@@ -70,9 +44,5 @@ public class User {
     }
     public void setRole(String role) {
         this.role = role;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
     }
 }
