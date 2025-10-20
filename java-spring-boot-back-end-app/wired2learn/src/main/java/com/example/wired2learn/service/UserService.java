@@ -5,6 +5,7 @@ import com.example.wired2learn.dto.UserResponseDTO;
 import com.example.wired2learn.model.User;
 import com.example.wired2learn.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -17,10 +18,17 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     // CREATE
     public UserResponseDTO createUser(UserRequestDTO dto) {
+
+        // Hash the password before saving
+        String hashedPassword = passwordEncoder.encode(dto.getPassword());
+
         // Create a new User entity from the DTO
-        User user = new User(dto.getName(), dto.getEmail(), dto.getPassword(), dto.getRole());
+        User user = new User(dto.getName(), dto.getEmail(), hashedPassword, dto.getRole());
 
         // Save the user to the database
         User savedUser = userRepository.save(user);
@@ -74,7 +82,11 @@ public class UserService {
         // Update user fields
         user.setName(dto.getName());
         user.setEmail(dto.getEmail());
-        user.setPassword(dto.getPassword());
+
+        // Hash the password before updating
+        String hashedPassword = passwordEncoder.encode(dto.getPassword());
+        user.setPassword(hashedPassword);
+
         user.setRole(dto.getRole());
 
         // Save the updated user to the database
