@@ -49,49 +49,55 @@ public class UserService {
     public UserResponseDTO getUserById(Long id) {
         Optional<User> optionalUser = userRepository.findById(id);
 
-        // If user is found, map to UserResponseDTO, else return null
-        if(optionalUser.isPresent()) {
-            return mapToResponse(optionalUser.get());
-        } else {
-            return null;
+        // If user is not found, throw exception
+        if(!optionalUser.isPresent()) {
+            throw new RuntimeException("User not found with id: " + id);
         }
+
+        // Is user is found, map to UserResponseDTO
+        User user = optionalUser.get();
+        return mapToResponse(user);
     }
 
     // UPDATE
     public UserResponseDTO updateUser(Long id, UserRequestDTO dto) {
         Optional<User> optionalUser = userRepository.findById(id);
 
-        // If user is found, update fields and save
-        if(optionalUser.isPresent()) {
-            // Create a new User entity from the DTO
-            User user = optionalUser.get();
-
-            // Update user fields
-            user.setName(dto.getName());
-            user.setEmail(dto.getEmail());
-            user.setPassword(dto.getPassword());
-            user.setRole(dto.getRole());
-
-            // Save the updated user to the database
-            User updatedUser = userRepository.save(user);
-
-            // Convert the updated User entity to a UserResponseDTO and return it
-            return mapToResponse(updatedUser);
-        } else {
-            return null;
+        // If user is not found, throw exception
+        if(!optionalUser.isPresent()) {
+            throw new RuntimeException("User not found with id: " + id);
         }
+
+        // If use is found, Create a new User entity from the DTO
+        User user = optionalUser.get();
+
+        // Update user fields
+        user.setName(dto.getName());
+        user.setEmail(dto.getEmail());
+        user.setPassword(dto.getPassword());
+        user.setRole(dto.getRole());
+
+        // Save the updated user to the database
+        User updatedUser = userRepository.save(user);
+
+        // Convert the updated User entity to a UserResponseDTO and return it
+        return mapToResponse(updatedUser);
     }
 
     // DELETE
     public void deleteUser(Long id) {
         Optional<User> optionalUser = userRepository.findById(id);
-        // If user is found, delete it
-        if(optionalUser.isPresent()) {
-            User user = optionalUser.get();
-            userRepository.delete(user);
+
+        // If user is not found, throw exception
+        if(!optionalUser.isPresent()) {
+            throw new RuntimeException("User not found with id: " + id);
         }
 
+        User user = optionalUser.get();
+        userRepository.delete(user);
     }
+
+    
     // Helper method to map User entity to UserResponseDTO
     private UserResponseDTO mapToResponse(User user) {
         return new UserResponseDTO(
