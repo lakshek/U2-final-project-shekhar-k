@@ -18,9 +18,9 @@ public class Favorite {
     private User user;
 
     // Many resources for one favorite
-    @ManyToOne
-    @JoinColumn(name = "resource_id", nullable = false)
-    private Resource resource;
+//    @ManyToOne
+//    @JoinColumn(name = "resource_id", nullable = false)
+//    private Resource resource;
 
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
@@ -29,14 +29,15 @@ public class Favorite {
     private LocalDateTime modifiedAt;
 
     // Constructors
-
-
-    public Favorite(User user, Resource resource) {
-        this.user = user;
-        this.resource = resource;
-        this.createdAt = LocalDateTime.now();
-        this.modifiedAt = LocalDateTime.now();
+    public Favorite() {
     }
+
+//    public Favorite(User user, Resource resource) {
+//        this.user = user;
+//        this.resource = resource;
+//        this.createdAt = LocalDateTime.now();
+//        this.modifiedAt = LocalDateTime.now();
+//    }
 
     // Getters and Setters
     public Long getId() {
@@ -50,12 +51,12 @@ public class Favorite {
         this.user = user;
     }
 
-    public Resource getResource() {
-        return resource;
-    }
-    public void setResource(Resource resource) {
-        this.resource = resource;
-    }
+//    public Resource getResource() {
+//        return resource;
+//    }
+//    public void setResource(Resource resource) {
+//        this.resource = resource;
+//    }
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
