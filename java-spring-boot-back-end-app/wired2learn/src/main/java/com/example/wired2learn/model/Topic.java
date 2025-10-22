@@ -14,7 +14,7 @@ public class Topic {
 
     // Many topics are in one category
     @ManyToOne
-    @JoinColumn(name = "category_id", nullable = false)
+    @JoinColumn(name = "category_id", nullable = false, foreignKey = @ForeignKey(name = "fk_topic_category_id"))
     private Category category;
 
     @Column(name = "topic_title", nullable = false)

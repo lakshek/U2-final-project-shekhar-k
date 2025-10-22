@@ -14,12 +14,12 @@ public class Favorite {
 
     // Many favorites for one user
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id", nullable = false, foreignKey = @ForeignKey(name = "fk_favorite_user_id"))
     private User user;
 
     // Many resources for one favorite
     @ManyToOne
-    @JoinColumn(name = "resource_id", nullable = false)
+    @JoinColumn(name = "resource_id", nullable = false, foreignKey = @ForeignKey(name = "fk_favorite_resource_id"))
     private Resource resource;
 
     @Column(name = "created_at", nullable = false)

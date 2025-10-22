@@ -15,7 +15,7 @@ public class Journal {
 
     // Many journals for one user. Each journal belongs to one user
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id", nullable = false, foreignKey = @ForeignKey(name = "fk_journal_user_id"))
     private User user;
 
     @Column(name = "journal_title", nullable = false)
