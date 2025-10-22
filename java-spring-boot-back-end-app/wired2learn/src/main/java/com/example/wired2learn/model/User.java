@@ -3,6 +3,7 @@ package com.example.wired2learn.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -26,6 +27,14 @@ public class User {
 
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
+
+    // One user can have many journals. Cascade delete journals when user is deleted
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<Journal> journals;
+
+    // One user can have many favorites. Cascade delete favorites when user is deleted
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<Favorite> favorites;
 
     // Constructors
     public User() {
