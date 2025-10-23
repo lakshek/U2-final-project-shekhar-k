@@ -116,7 +116,8 @@ public class UserService {
                 user.getId(),
                 user.getName(),
                 user.getEmail(),
-                user.getRole()
+                user.getRole(),
+                user.getCreatedAt()
         );
     }
 }

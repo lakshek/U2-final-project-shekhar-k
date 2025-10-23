@@ -1,28 +1,30 @@
 package com.example.wired2learn.dto;
 
+import java.time.LocalDateTime;
+
 public class UserResponseDTO {
     private Long id;
     private String name;
     private String email;
     private String role;
+    private LocalDateTime createdAt;
+
 
     // Constructors
     public UserResponseDTO() {
     }
 
-    public UserResponseDTO(Long id, String name, String email, String role) {
+    public UserResponseDTO(Long id, String name, String email, String role, LocalDateTime createdAt) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.role = role;
+        this.createdAt = createdAt;
     }
 
     // Getters and Setters
     public Long getId() {
         return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -44,5 +46,9 @@ public class UserResponseDTO {
     }
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public LocalDateTime getCreatedAt () {
+        return createdAt;
     }
 }

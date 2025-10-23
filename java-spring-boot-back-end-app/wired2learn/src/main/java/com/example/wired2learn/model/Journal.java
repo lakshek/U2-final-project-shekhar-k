@@ -1,6 +1,8 @@
 package com.example.wired2learn.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -27,9 +29,11 @@ public class Journal {
     @Column(name = "journal_entry", columnDefinition = "TEXT", nullable = false)
     private String entry;
 
+    @CreationTimestamp
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
+    @UpdateTimestamp
     @Column(name = "modified_at")
     private LocalDateTime modifiedAt;
 
@@ -42,8 +46,6 @@ public class Journal {
         this.title = title;
         this.date = date;
         this.entry = entry;
-        this.createdAt = LocalDateTime.now();
-        this.modifiedAt = LocalDateTime.now();
     }
 
     // Getters and Setters
@@ -85,8 +87,5 @@ public class Journal {
 
     public LocalDateTime getModifiedAt() {
         return modifiedAt;
-    }
-    public void setModifiedAt(LocalDateTime modifiedAt) {
-        this.modifiedAt = modifiedAt;
     }
 }

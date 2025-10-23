@@ -1,6 +1,8 @@
 package com.example.wired2learn.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -22,9 +24,11 @@ public class Favorite {
     @JoinColumn(name = "resource_id", nullable = false, foreignKey = @ForeignKey(name = "fk_favorite_resource_id"))
     private Resource resource;
 
+    @CreationTimestamp
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
+    @UpdateTimestamp
     @Column(name = "modified_at")
     private LocalDateTime modifiedAt;
 
@@ -64,9 +68,5 @@ public class Favorite {
 
     public LocalDateTime getModifiedAt() {
         return modifiedAt;
-    }
-
-    public void setModifiedAt(LocalDateTime modifiedAt) {
-        this.modifiedAt = modifiedAt;
     }
 }

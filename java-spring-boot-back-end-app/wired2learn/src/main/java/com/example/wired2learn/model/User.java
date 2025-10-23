@@ -1,6 +1,7 @@
 package com.example.wired2learn.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -25,6 +26,7 @@ public class User {
     @Column(name = "user_role", nullable = false)
     private String role;
 
+    @CreationTimestamp
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
@@ -45,7 +47,6 @@ public class User {
         this.email = email;
         this.password = password;
         this.role = role;
-        this.createdAt = LocalDateTime.now();
     }
 
     // Getters and Setters

@@ -1,6 +1,8 @@
 package com.example.wired2learn.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.web.servlet.tags.form.TextareaTag;
 
 import java.time.LocalDateTime;
@@ -26,9 +28,11 @@ public class Resource {
     @Column(name = "resource_is_protected", nullable = false)
     private boolean isProtected;
 
+    @CreationTimestamp
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
+    @UpdateTimestamp
     @Column(name = "modified_at")
     private LocalDateTime modifiedAt;
 
@@ -44,8 +48,6 @@ public class Resource {
         this.url = url;
         this.description = description;
         this.isProtected = isProtected;
-        this.createdAt = LocalDateTime.now();
-        this.modifiedAt = LocalDateTime.now();
     }
 
     // Getters and Setters
@@ -88,10 +90,6 @@ public class Resource {
 
     public LocalDateTime getModifiedAt() {
         return modifiedAt;
-    }
-
-    public void setModifiedAt(LocalDateTime modifiedAt) {
-        this.modifiedAt = modifiedAt;
     }
 
     public List<Favorite> getFavorites() {
