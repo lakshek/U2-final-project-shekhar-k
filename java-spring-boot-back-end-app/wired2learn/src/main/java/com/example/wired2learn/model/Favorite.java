@@ -28,10 +28,6 @@ public class Favorite {
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
-    @UpdateTimestamp
-    @Column(name = "modified_at")
-    private LocalDateTime modifiedAt;
-
     // Constructors
     public Favorite() {
     }
@@ -62,9 +58,5 @@ public class Favorite {
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
-    }
-
-    public LocalDateTime getModifiedAt() {
-        return modifiedAt;
     }
 }

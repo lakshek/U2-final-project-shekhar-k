@@ -25,10 +25,10 @@ public class JournalService {
     // CREATE
     public JournalResponseDTO createJournal(JournalRequestDTO dto) {
 
-        // Check if user exists. If user not found, throw an exception
+        // Check if User exists. If User not found, throw an exception
         User user = userRepository.findById(dto.getUserId()).orElseThrow(() -> new RuntimeException("User not found with id: " + dto.getUserId()));
 
-        // If user is found, create a journal object from the DTO
+        // If User is found, create a journal object from the DTO
         Journal journal = new Journal(user, dto.getTitle(), dto.getDate(), dto.getEntry());
 
         Journal savedJournal = journalRepository.save(journal);
