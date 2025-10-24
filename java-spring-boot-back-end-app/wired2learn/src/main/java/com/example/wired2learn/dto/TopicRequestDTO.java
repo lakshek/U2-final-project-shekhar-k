@@ -1,5 +1,7 @@
 package com.example.wired2learn.dto;
 
+import com.example.wired2learn.model.Category;
+
 public class TopicRequestDTO {
 
     private Long categoryId;
@@ -13,7 +15,7 @@ public class TopicRequestDTO {
     }
 
     public TopicRequestDTO(Long categoryId, String title, String content, String imageUrl, boolean isProtected) {
-        this. categoryId = categoryId;
+        this.categoryId = categoryId;
         this.title = title;
         this.content = content;
         this.imageUrl = imageUrl;
