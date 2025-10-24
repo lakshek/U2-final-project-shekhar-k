@@ -35,13 +35,13 @@ public class UserService {
         // Hash the password before saving
         String hashedPassword = passwordEncoder.encode(dto.getPassword());
 
-        // Create a new User entity from the DTO
+        // Create a new User object from the DTO
         User user = new User(dto.getName(), dto.getEmail(), hashedPassword, dto.getRole());
 
         // Save the user to the database
         User savedUser = userRepository.save(user);
 
-        // Convert the saved User entity to a UserResponseDTO and return it
+        // Convert the saved User object to a UserResponseDTO and return it
         return mapToResponse(savedUser);
     }
 
@@ -52,7 +52,7 @@ public class UserService {
         // Create a new ArrayList to hold UserResponseDTOs
         List<UserResponseDTO> responseList = new ArrayList<>();
 
-        // Convert each User entity to UserResponseDTO and add to the response list
+        // Convert each User object to UserResponseDTO and add it to the response list
         for (User user : users) {
             responseList.add(mapToResponse(user));
         }
@@ -77,15 +77,9 @@ public class UserService {
 
     // UPDATE
     public UserResponseDTO updateUser(Long id, UserRequestDTO dto) {
-        Optional<User> optionalUser = userRepository.findById(id);
 
-        // If user is not found, throw exception
-        if(!optionalUser.isPresent()) {
-            throw new RuntimeException("User not found with id: " + id);
-        }
-
-        // If user is found, Create a new User entity from the DTO
-        User user = optionalUser.get();
+        // Check if user exists. If user not found, throw exception
+        User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found with id: " + id));
 
         // Update user fields
         user.setName(dto.getName());
@@ -100,20 +94,15 @@ public class UserService {
         // Save the updated user to the database
         User updatedUser = userRepository.save(user);
 
-        // Convert the updated User entity to a UserResponseDTO and return it
+        // Convert the updated User object to a UserResponseDTO and return it
         return mapToResponse(updatedUser);
     }
 
     // DELETE
     public void deleteUser(Long id) {
-        Optional<User> optionalUser = userRepository.findById(id);
 
-        // If user is not found, throw exception
-        if(!optionalUser.isPresent()) {
-            throw new RuntimeException("User not found with id: " + id);
-        }
-
-        User user = optionalUser.get();
+        // Check if user exists. If user not found, throw exception
+        User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found with id: " + id));
 
         if (journalRepository.existsByUser(user)) {
             throw new RuntimeException("Cannot delete user: journals exist for this user. Delete journals first.");
@@ -127,7 +116,7 @@ public class UserService {
     }
 
     
-    // Helper method to map User entity to UserResponseDTO
+    // Helper method to map User object to UserResponseDTO
     private UserResponseDTO mapToResponse(User user) {
         return new UserResponseDTO(
                 user.getId(),
