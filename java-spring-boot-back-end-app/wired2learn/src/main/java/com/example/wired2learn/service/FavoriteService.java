@@ -38,8 +38,10 @@ public class FavoriteService {
         // If User and Journal are found, create a Favorite object from the dto
         Favorite favorite = new Favorite(user, resource);
 
+        // Save favorite to the database
         Favorite savedFavorite = favoriteRepository.save(favorite);
 
+        // Convert saved favorite object to FavoriteResponseDTO and return it
         return mapToResponse(savedFavorite);
     }
 

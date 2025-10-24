@@ -31,8 +31,10 @@ public class JournalService {
         // If User is found, create a journal object from the DTO
         Journal journal = new Journal(user, dto.getTitle(), dto.getDate(), dto.getEntry());
 
+        // Save journal to the database
         Journal savedJournal = journalRepository.save(journal);
 
+        // Convert the saved journal object to JournalResponseDTo and return it
         return mapToResponse(savedJournal);
     }
 
