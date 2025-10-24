@@ -39,8 +39,6 @@ public class Favorite {
     public Favorite(User user, Resource resource) {
         this.user = user;
         this.resource = resource;
-        this.createdAt = LocalDateTime.now();
-        this.modifiedAt = LocalDateTime.now();
     }
 
     // Getters and Setters

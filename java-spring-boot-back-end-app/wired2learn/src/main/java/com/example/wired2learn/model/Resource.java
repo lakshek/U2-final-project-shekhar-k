@@ -36,7 +36,7 @@ public class Resource {
     @Column(name = "modified_at")
     private LocalDateTime modifiedAt;
 
-    @OneToMany(mappedBy = "resource", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @OneToMany(mappedBy = "resource")
     private List<Favorite> favorites;
 
     // Constructors

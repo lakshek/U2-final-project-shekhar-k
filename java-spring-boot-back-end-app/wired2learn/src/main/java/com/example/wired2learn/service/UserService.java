@@ -3,6 +3,8 @@ package com.example.wired2learn.service;
 import com.example.wired2learn.dto.UserRequestDTO;
 import com.example.wired2learn.dto.UserResponseDTO;
 import com.example.wired2learn.model.User;
+import com.example.wired2learn.repository.FavoriteRepository;
+import com.example.wired2learn.repository.JournalRepository;
 import com.example.wired2learn.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -20,6 +22,12 @@ public class UserService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private JournalRepository journalRepository;
+
+    @Autowired
+    private FavoriteRepository favoriteRepository;
 
     // CREATE
     public UserResponseDTO createUser(UserRequestDTO dto) {
@@ -76,7 +84,7 @@ public class UserService {
             throw new RuntimeException("User not found with id: " + id);
         }
 
-        // If use is found, Create a new User entity from the DTO
+        // If user is found, Create a new User entity from the DTO
         User user = optionalUser.get();
 
         // Update user fields
@@ -106,6 +114,15 @@ public class UserService {
         }
 
         User user = optionalUser.get();
+
+        if (journalRepository.existsByUser(user)) {
+            throw new RuntimeException("Cannot delete user: journals exist for this user. Delete journals first.");
+        }
+
+        if (favoriteRepository.existsByUser(user)) {
+            throw new RuntimeException("Cannot delete user. Favorites exist for this user. Delete favorites first.");
+        }
+
         userRepository.delete(user);
     }
 

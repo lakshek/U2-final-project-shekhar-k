@@ -30,12 +30,12 @@ public class User {
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
-    // One user can have many journals. Cascade delete journals when user is deleted
-    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    // One user can have many journals.
+    @OneToMany(mappedBy = "user")
     private List<Journal> journals;
 
-    // One user can have many favorites. Cascade delete favorites when user is deleted
-    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    // One user can have many favorites.
+    @OneToMany(mappedBy = "user")
     private List<Favorite> favorites;
 
     // Constructors
@@ -84,5 +84,13 @@ public class User {
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
+    }
+
+    public List<Journal> getJournals() {
+        return journals;
+    }
+
+    public List<Favorite> getFavorites() {
+        return favorites;
     }
 }
