@@ -9,7 +9,7 @@ public class TopicResponseDTO {
     private String title;
     private String content;
     private String imageUrl;
-    private boolean isProtected;
+    private boolean locked;
     private LocalDateTime createdAt;
     private LocalDateTime modifiedAt;
 
@@ -17,13 +17,13 @@ public class TopicResponseDTO {
     public TopicResponseDTO() {
     }
 
-    public TopicResponseDTO(Long id, Long categoryId, String title, String content, String imageUrl, boolean isProtected, LocalDateTime createdAt, LocalDateTime modifiedAt) {
+    public TopicResponseDTO(Long id, Long categoryId, String title, String content, String imageUrl, boolean locked, LocalDateTime createdAt, LocalDateTime modifiedAt) {
         this.id = id;
         this.categoryId = categoryId;
         this.title = title;
         this.content = content;
         this.imageUrl = imageUrl;
-        this.isProtected = isProtected;
+        this.locked = locked;
         this.createdAt = createdAt;
         this.modifiedAt = modifiedAt;
     }
@@ -59,11 +59,11 @@ public class TopicResponseDTO {
         this.imageUrl = imageUrl;
     }
 
-    public boolean isProtected() {
-        return isProtected;
+    public boolean getLocked() {
+        return locked;
     }
-    public void setProtected(boolean aProtected) {
-        isProtected = aProtected;
+    public void setLocked(boolean locked) {
+        this.locked = locked;
     }
 
     public LocalDateTime getCreatedAt() {

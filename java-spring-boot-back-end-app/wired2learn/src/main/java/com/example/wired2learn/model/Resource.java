@@ -25,8 +25,8 @@ public class Resource {
     @Column(name = "resource_description", columnDefinition = "TEXT")
     private String description;
 
-    @Column(name = "resource_is_protected", nullable = false)
-    private boolean isProtected;
+    @Column(name = "resource_locked", nullable = false)
+    private boolean locked;
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false)
@@ -43,11 +43,11 @@ public class Resource {
     public Resource () {
     }
 
-    public Resource(String title, String url, String description, boolean isProtected) {
+    public Resource(String title, String url, String description, boolean locked) {
         this.title = title;
         this.url = url;
         this.description = description;
-        this.isProtected = isProtected;
+        this.locked = locked;
     }
 
     // Getters and Setters
@@ -77,11 +77,11 @@ public class Resource {
         this.description = description;
     }
 
-    public boolean isProtected() {
-        return isProtected;
+    public boolean getLocked() {
+        return locked;
     }
-    public void setProtected(boolean aProtected) {
-        isProtected = aProtected;
+    public void setLocked(boolean locked) {
+        this.locked = locked;
     }
 
     public LocalDateTime getCreatedAt() {

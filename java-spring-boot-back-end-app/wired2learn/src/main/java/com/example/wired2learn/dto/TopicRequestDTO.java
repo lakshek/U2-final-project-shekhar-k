@@ -8,18 +8,18 @@ public class TopicRequestDTO {
     private String title;
     private String content;
     private String imageUrl;
-    private boolean isProtected;
+    private boolean locked;
 
     // Constructors
     public TopicRequestDTO() {
     }
 
-    public TopicRequestDTO(Long categoryId, String title, String content, String imageUrl, boolean isProtected) {
+    public TopicRequestDTO(Long categoryId, String title, String content, String imageUrl, boolean locked) {
         this.categoryId = categoryId;
         this.title = title;
         this.content = content;
         this.imageUrl = imageUrl;
-        this.isProtected = isProtected;
+        this.locked = locked;
     }
 
     // Getters and Setters
@@ -49,10 +49,10 @@ public class TopicRequestDTO {
         this.imageUrl = imageUrl;
     }
 
-    public boolean isProtected() {
-        return isProtected;
+    public boolean getLocked() {
+        return locked;
     }
-    public void setProtected(boolean aProtected) {
-        isProtected = aProtected;
+    public void setLocked(boolean locked) {
+        this.locked = locked;
     }
 }

@@ -3,7 +3,9 @@ package com.example.wired2learn.service;
 import com.example.wired2learn.dto.CategoryRequestDTO;
 import com.example.wired2learn.dto.CategoryResponseDTO;
 import com.example.wired2learn.model.Category;
+import com.example.wired2learn.model.Topic;
 import com.example.wired2learn.repository.CategoryRepository;
+import com.example.wired2learn.repository.TopicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,9 @@ public class CategoryService {
 
     @Autowired
     private CategoryRepository categoryRepository;
+
+    @Autowired
+    private TopicRepository topicRepository;
 
     // CREATE
     public CategoryResponseDTO createCategory(CategoryRequestDTO dto) {
@@ -74,6 +79,11 @@ public class CategoryService {
 
         // Check if Category exists. If Category not found, throw exception
         Category category = categoryRepository.findById(id).orElseThrow(() -> new RuntimeException("Category not found with id: " + id));
+
+        // Check if a topic exists for the category. If topic found, throw exception
+        if (topicRepository.existsByCategory(category)) {
+            throw new RuntimeException("Cannot delete category: topics exist for this user. Delete topics first.");
+        }
 
         categoryRepository.delete(category);
     }

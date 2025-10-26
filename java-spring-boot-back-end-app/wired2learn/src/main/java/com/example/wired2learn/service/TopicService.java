@@ -28,7 +28,7 @@ public class TopicService {
         Category category = categoryRepository.findById(dto.getCategoryId()).orElseThrow(() -> new RuntimeException("Category not found with id: " + dto.getCategoryId()));
 
         // Create topic object from the DTO
-        Topic topic = new Topic(category, dto.getTitle(), dto.getContent(), dto.getImageUrl(), dto.isProtected());
+        Topic topic = new Topic(category, dto.getTitle(), dto.getContent(), dto.getImageUrl(), dto.getLocked());
 
         // Save Topic to the database
         Topic savedTopic = topicRepository.save(topic);
@@ -77,7 +77,7 @@ public class TopicService {
         topic.setTitle(dto.getTitle());
         topic.setContent(dto.getContent());
         topic.setImageUrl(dto.getImageUrl());
-        topic.setProtected(dto.isProtected());
+        topic.setLocked(dto.getLocked());
 
         // Save topic to the database
         Topic savedTopic = topicRepository.save(topic);
@@ -104,7 +104,7 @@ public class TopicService {
                 topic.getTitle(),
                 topic.getContent(),
                 topic.getImageUrl(),
-                topic.isProtected(),
+                topic.getLocked(),
                 topic.getCreatedAt(),
                 topic.getModifiedAt()
         );

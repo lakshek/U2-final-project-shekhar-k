@@ -24,7 +24,7 @@ public class ResourceService {
     public ResourceResponseDTO createResource(ResourceRequestDTO dto) {
 
         // Create resource from DTO
-        Resource resource = new Resource(dto.getTitle(), dto.getUrl(), dto.getDescription(), dto.isProtected());
+        Resource resource = new Resource(dto.getTitle(), dto.getUrl(), dto.getDescription(), dto.getLocked());
 
         // Save the object to the database
         Resource savedResource = resourceRepository.save(resource);
@@ -68,7 +68,7 @@ public class ResourceService {
         resource.setTitle(dto.getTitle());
         resource.setUrl(dto.getUrl());
         resource.setDescription(dto.getDescription());
-        resource.setProtected(dto.isProtected());
+        resource.setLocked(dto.getLocked());
 
         // Save the object to the database
         Resource savedResource = resourceRepository.save(resource);
@@ -83,6 +83,11 @@ public class ResourceService {
         // Check if resource exists. If resource not found, throw exception
         Resource resource = resourceRepository.findById(id).orElseThrow(() -> new RuntimeException("Resource not found with id: " + id));
 
+        // Check if favorite exists for the user. If favorite found, throw exception
+        if (favoriteRepository.existsByResource(resource)) {
+            throw new RuntimeException("Cannot delete resource. Favorites exist for this user. Delete favorites first.");
+        }
+
         resourceRepository.delete(resource);
     }
 
@@ -94,7 +99,7 @@ public class ResourceService {
             resource.getTitle(),
             resource.getUrl(),
             resource.getDescription(),
-            resource.isProtected(),
+            resource.getLocked(),
             resource.getCreatedAt(),
             resource.getModifiedAt()
         );

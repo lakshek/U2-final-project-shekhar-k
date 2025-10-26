@@ -5,17 +5,17 @@ public class ResourceRequestDTO {
     private String title;
     private String url;
     private String description;
-    private boolean isProtected;
+    private boolean locked;
 
     // Constructors
     public ResourceRequestDTO() {
     }
 
-    public ResourceRequestDTO(String title, String url, String description, boolean isProtected) {
+    public ResourceRequestDTO(String title, String url, String description, boolean locked) {
         this.title = title;
         this.url = url;
         this.description = description;
-        this.isProtected = isProtected;
+        this.locked = locked;
     }
 
     //Getters and Setters
@@ -41,10 +41,10 @@ public class ResourceRequestDTO {
         this.description = description;
     }
 
-    public boolean isProtected() {
-        return isProtected;
+    public boolean getLocked() {
+        return locked;
     }
-    public void setProtected(boolean aProtected) {
-        isProtected = aProtected;
+    public void setLocked(boolean locked) {
+        this.locked = locked;
     }
 }

@@ -28,8 +28,8 @@ public class Topic {
     @Column(name = "topic_image_url", length = 500)
     private String imageUrl;
 
-    @Column(name = "topic_is_protected", nullable = false)
-    private boolean isProtected;
+    @Column(name = "topic_locked", nullable = false)
+    private boolean locked;
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false)
@@ -43,12 +43,12 @@ public class Topic {
     public Topic() {
     }
 
-    public Topic(Category category, String title, String content, String imageUrl, boolean isProtected) {
+    public Topic(Category category, String title, String content, String imageUrl, boolean locked) {
         this.category = category;
         this.title = title;
         this.content = content;
         this.imageUrl = imageUrl;
-        this.isProtected = isProtected;
+        this.locked = locked;
     }
 
     // Getters and Setters
@@ -85,11 +85,11 @@ public class Topic {
         this.imageUrl = imageUrl;
     }
 
-    public boolean isProtected() {
-        return isProtected;
+    public boolean getLocked() {
+        return locked;
     }
-    public void setProtected(boolean aProtected) {
-        isProtected = aProtected;
+    public void setLocked(boolean locked) {
+        this.locked = locked;
     }
 
     public LocalDateTime getCreatedAt() {

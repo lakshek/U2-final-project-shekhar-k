@@ -104,10 +104,12 @@ public class UserService {
         // Check if user exists. If user not found, throw exception
         User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found with id: " + id));
 
+        // Check if journal exists for the user. If journal found, throw exception
         if (journalRepository.existsByUser(user)) {
             throw new RuntimeException("Cannot delete user: journals exist for this user. Delete journals first.");
         }
 
+        // Check if favorite exists for the user. If favorite found, throw exception
         if (favoriteRepository.existsByUser(user)) {
             throw new RuntimeException("Cannot delete user. Favorites exist for this user. Delete favorites first.");
         }

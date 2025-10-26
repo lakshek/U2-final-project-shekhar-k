@@ -8,7 +8,7 @@ public class ResourceResponseDTO {
     private String title;
     private String url;
     private String description;
-    private boolean isProtected;
+    private boolean locked;
     private LocalDateTime createdAt;
     private LocalDateTime modifiedAt;
 
@@ -16,13 +16,13 @@ public class ResourceResponseDTO {
     public ResourceResponseDTO() {
     }
 
-    public ResourceResponseDTO(Long id, String title, String url, String description, boolean isProtected, LocalDateTime createdAt, LocalDateTime modifiedAt) {
+    public ResourceResponseDTO(Long id, String title, String url, String description, boolean locked, LocalDateTime createdAt, LocalDateTime modifiedAt) {
         this.id = id;
         this.title = title;
         this.url = url;
         this.description = description;
-        this.isProtected = isProtected;
-        this. createdAt = createdAt;
+        this.locked = locked;
+        this.createdAt = createdAt;
         this.modifiedAt = modifiedAt;
     }
 
@@ -53,11 +53,11 @@ public class ResourceResponseDTO {
         this.description = description;
     }
 
-    public boolean isProtected() {
-        return isProtected;
+    public boolean getLocked() {
+        return locked;
     }
-    public void setProtected(boolean aProtected) {
-        isProtected = aProtected;
+    public void setLocked(boolean locked) {
+        this.locked = locked;
     }
 
     public LocalDateTime getCreatedAt() {

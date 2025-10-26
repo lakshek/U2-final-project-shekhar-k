@@ -30,11 +30,13 @@ public class FavoriteController {
     }
 
     // Get a favorite by id
+    @GetMapping("/{id}")
     public ResponseEntity<FavoriteResponseDTO> getFavoriteById(@PathVariable Long id) {
         return ResponseEntity.ok(favoriteService.getFavoriteById(id));
     }
 
     // Delete a favorite
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteFavorite(@PathVariable Long id) {
         favoriteService.deleteFavorite(id);
         return ResponseEntity.ok("Favorite deleted successfully.");
