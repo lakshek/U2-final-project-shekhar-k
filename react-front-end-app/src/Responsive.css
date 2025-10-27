@@ -1,0 +1,33 @@
+/* Desktop 1024px and above */
+
+@media (min-width: 1024px) {
+    
+    footer {
+        padding: 10px;
+    }
+
+}
+
+/* Tablet 768px to 1023px */
+
+@media (max-width: 1023px) and (min-width: 768px) {
+
+    footer {
+        padding: 8px 10px;
+    }
+
+}
+
+/* Mobile below 768px */
+
+@media (max-width: 767px) {
+    
+    nav a {
+        padding: 8px 10px;
+    }
+
+    footer {
+        padding: 6px 10px;
+    }
+
+}
