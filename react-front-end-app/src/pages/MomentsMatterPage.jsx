@@ -35,8 +35,24 @@ export default function MomentsMatterPage() {
                 <ReactMarkDown>{momentsIntroText}</ReactMarkDown>
             </div>
 
-            
+            {/* Show the button only if the extended text is not visible */}
+            {!showExpanded && (
+                <button onClick={handleShowExpanded}>
+                    Why moments matter... biologically speaking
+                </button>
+            )}
 
+            {/* Display expanded text when the button is clicked */}
+            {showExpanded && (
+                <div>
+                    <ReactMarkDown>{momentsExtendedText}</ReactMarkDown>
+
+                    {/* navigation to Be Intentional page */}
+                    <Link to="/be-intentional" className="btn-link">
+                        Be Intentional
+                    </Link>
+                </div>
+            )}
 
         </section>
     )
