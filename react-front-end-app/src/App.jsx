@@ -14,6 +14,7 @@ import './App.css'
 
 // import responsive CSS
 import './Responsive.css'
+import MomentsMatterPage from './pages/MomentsMatterPage'
 
 export default function App() {
 
@@ -25,6 +26,7 @@ export default function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
+              <Route path="/moments-matter" element={<MomentsMatterPage />} />
               <Route path="/explore" element={<ExplorePage />} />
               <Route path="/comment" element={<CommentPage />} />
             </Routes>

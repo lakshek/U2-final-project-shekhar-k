@@ -1,135 +1,35 @@
 // define long texts that are used in different pages as variables
 
 // Home Page texts
-export const homeIntroText1 = 
-`I live in your brain. Actually, *all* your brains 🧠. I've got about **100 billion** siblings up here — yes, your head is more crowded than any wild party 🎉 you can imagine.
-
-We're wiggly, wiry, and wildly busy. Can't help it.
-Even when you sleep 😴, we're buzzing around like sugar—fueled toddlers.
-
-Why? Because *we've got one job:* **taking care of you.** And we take that job very seriously.
-
-You had a thought ("I should read this"), then — **boom**, you clicked the button — instant brain magic ⚡️
-
-**Input → brain → output.** 
+export const homeText = 
+`A baby’s brain is as intricate and enigmatic as a celestial labyrinth. From birth to age six, it develops at an astonishing pace. By three, the strides children make in movement, language, understanding, and adapting to our world are truly astounding.  
+These early years either build a strong, supportive foundation or a fragile, unreliable one, which shapes all future learning, behavior, and health.  
+It is imperative to prepare environments that nurture holistic development at every stage.  
+> Your child’s brain is *growing every moment*, shaped by **accident or** by **intention**.  
+> The choice is **your**s, but a **choice** that **profoundly matters to your child**.
 `
 ;
 
-export const homeIntroText2 = 
-`I know what you're thinking: *“That's like a computer.”* 💻
-
-Nope. Computers are like us. We were here first.
-
-We moved in before you were even born — setting up shop, making connections (we call those **neural connections** ⚡️), and basically wiring your brain like a superhighway of thought 💡.
-
-Anytime you see, hear, hug, cry, or even overthink bedtime routines, we're **forming connections** ⚡️ just for you.
-
-And the more you *repeat* something (yes, even reading *Goodnight Moon* for the 9,000th time), the **stronger those connections get.** 💪
-
-**Practice doesn't just make it perfect — makes it permanent.**
-
-But here's the kicker: if you *stop using* a skill?
-
-> We **prune** it ✂️. Marie Kondo style.  
-
-Doesn't spark joy (or activity)? *Out it goes.*
+export const momentsIntroText =
+`Every moment in a baby’s life builds the architecture of the brain. When babies are free to explore—touching, tasting, watching, and listening—they are wiring the foundations for all future learning, behavior, and health.  
+It’s not the toys, gadgets, or schedules that matter most. It’s the **moments of connection** - when you meet their gaze, follow their curiosity, or let them lead the play. These moments create harmony between emotion and understanding, forming a strong, flexible base for lifelong growth.
+>Every look, word, and gesture shapes the brain’s foundation.  
+>Every moment you share builds the world your child will stand on.
 `
 ;
 
-export const homeExtendedText = 
+export const momentsExtendedText = 
 `---
-This whole system? It's called **learning**. 🧠  
-Not just school stuff — *life stuff.*
-
->- Babies *learning* to roll over. ↩️  
->- Kids *learning* to share (we're working on it). 😬  
->- You *learning* to survive sleep regressions. 💤
-
-Walking, talking, parenting — all of it came from us.  
-You don't remember learning to walk, right? You practiced that before you could even say “Mama.”
-
-And look at you now!  
-You've mastered walking. You don't even think about it. That was us. You're welcome.
-
-Just imagine if you gave up walking — like you sometimes think of giving up LaunchCode… ❓
-
-**Stick around. You can do this.**  
-We've got your back. *(And your brain.)* 🧠
-
-So when you doubt yourself, just remember:  
-You're building new neural pathways with every late—night feed, every soothing bounce, every moment of connection, and every hook and link.
-
-And don't worry — we're helping. ⚡️
-
-### Sometimes I wonder if we're too powerful. 😏
-`
+This is Moments Matter extended text.`
 ;
 
 // About Page text
 export const aboutText = 
-`### Hi again, it's me, Nu Ron.  
-Still in your brain. Still working overtime.
+`About page text`
+;
 
-Let's talk about how we roll. **Literally.**
-
-Every single thing your baby does — wiggles, kicks, gurgles, even that confused stare at ceiling fans — it's building brain connections.
-
-We call them **neural connections** ⚡️ (*aka synapses*), and it's kind of our thing.
-
->- New experience? 💥 We form one.  
->- Repeat it? 💪 We strengthen it.  
->- Something a little different? 🎨 We remix what we've got.
-
-We start with *simple connections* before ramping up to *complex networks.*  
-It's like a *never—ending construction zone* here:  
-🚧 No hard hats needed — just love and repetition.
-
-And get this:  
-In the early years, we're firing off **over a million new connections every second.**
-
-**Yeah. Per second.**  
-That's more than your coffee—fueled brain can even count. ☕
-
-Ever wonder how your baby goes from floppy newborn to standing, babbling mini—human in two years?  
-That's us.
-
-From random arm flails to crawling across the room like a determined potato — it's all part of the plan.
-
-And no, you can't rush us.  
-No flashcards or baby coding apps are going to speed up brain development.
-
-**Every child learns at their own pace.**  
-We like it that way.
-
-We're not cramming for finals — we're **building for life.**
-
-You want to help?
-
->- Set the stage. 🎭  
->- Give them space, time, love, and lots of chances to try, fumble, and try again.
-
-That's how learning sticks.  
-That's how we grow strong.
-
-Oh — and brain development doesn't stop after the toddler years.
-
-We're in it for the long haul:  
-Childhood, teen angst, adulting — all of it.
-
-But the early years?  
-That's when we pour the foundation: **strong and steady, or wobbly and weak.**
-
-No pressure, right? 😅
-
-Just remember: **every drool—soaked milestone is a win.**  
-You're not just wiping spit-up — *you're helping build a brain.* ⚙️
-
-> Hey hey, I'm under construction! 🚧  
-> Every tickle, tune, and "don't eat that!" moment is laying down my brain's blueprint.
-
-> 👶 Right now, I'm wiring up my lifelong circuits for learning, behavior, and even keeping my sniffles in check.
-
-> So yeah... every burp and babble? Kinda a big deal.`
+export const intentionalText = 
+`This is Intentional text`
 ;
 
 // Explore Page texts

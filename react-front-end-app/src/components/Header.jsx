@@ -11,7 +11,7 @@ export default function Header() {
 
             <div>
                 <img src={BrainIcon} alt="An image of connected lines with dots in the shape of human brain" />
-                <h1>Wired to Learn</h1>
+                <h1>Wired2Learn</h1>
             </div>
 
             <nav>
@@ -19,6 +19,7 @@ export default function Header() {
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/about">About</Link></li>
+                    <li><Link to="/moments-matter">Moments Matter</Link></li>
                     <li><Link to="/explore">Explore</Link></li>
                     <li><Link to="/comment">Comment</Link></li>
                 </ul>
