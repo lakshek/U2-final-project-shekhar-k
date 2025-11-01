@@ -23,8 +23,7 @@ export default function BeIntentionalPage() {
             
             {/* Navigation to Explore page */}
             <div>
-                <Link to="/explore" className="btn-link">Explore</Link>
-                Explore to act with purpose
+                <Link to="/explore" className="btn-link">Explore to act with purpose</Link>
             </div>
 
         </section>

@@ -5,7 +5,6 @@ import { HashRouter as Router, Routes, Route, HashRouter } from 'react-router-do
 import Header from './components/Header'
 import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
-import AboutPage from './pages/AboutPage'
 import ExplorePage from './pages/ExplorePage'
 import CommentPage from './pages/CommentPage'
 
@@ -26,7 +25,6 @@ export default function App() {
           <main>
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/about" element={<AboutPage />} />
               <Route path="/moments" element={<MomentsMatterPage />} />
               <Route path="intentional" element={<BeIntentionalPage />} />
               <Route path="/explore" element={<ExplorePage />} />
