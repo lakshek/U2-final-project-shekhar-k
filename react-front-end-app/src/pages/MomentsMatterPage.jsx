@@ -1,15 +1,15 @@
-// import React hook
+// Import React hook
 import { useState } from "react";
 
-// import Link from Roouter DOM
+// Import Link from Router DOM
 import { Link } from "react-router-dom";
 
-// import ReactMarkDown to format text
+// Import ReactMarkDown to format text
 import ReactMarkDown from 'react-markdown';
 
-// import image used in Moments Matter page
+// Import image used in Moments Matter page
 
-// import long texts as variables used in Moments Matter page
+// Import long texts as variables used in Moments Matter page
 import { momentsIntroText, momentsExtendedText } from "../data/texts";
 
 export default function MomentsMatterPage() {
@@ -48,7 +48,7 @@ export default function MomentsMatterPage() {
                     <ReactMarkDown>{momentsExtendedText}</ReactMarkDown>
 
                     {/* navigation to Be Intentional page */}
-                    <Link to="/be-intentional" className="btn-link">
+                    <Link to="/intentional" className="btn-link">
                         Be Intentional
                     </Link>
                 </div>

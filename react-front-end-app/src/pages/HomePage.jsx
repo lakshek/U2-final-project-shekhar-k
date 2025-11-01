@@ -19,7 +19,7 @@ export default function HomePage() {
 
             <div>
                 {/* Page heading and image */}
-                <h2>Welcome to wired2lern</h2>
+                <h2>Welcome to wired2learn</h2>
                 <h3>Thank you for visiting this site - intentionally</h3>
                 <img
                     src={BabyBrain}
@@ -35,13 +35,13 @@ export default function HomePage() {
             </div>
 
             <div>
-                {/* navigation button to Moments Matter page */}
-                <Link to="/moments-matter" className='btn-link'>
+                {/* Navigation button to Moments Matter page */}
+                <Link to="/moments" className='btn-link'>
                     Moments Matter                
                 </Link>
 
-                {/* navigation button to Be Intentional page */}
-                <Link to="be-intentional" className='btn-link'>
+                {/* Navigation button to Be Intentional page */}
+                <Link to="intentional" className='btn-link'>
                     Be Intentional
                 </Link>
             </div>

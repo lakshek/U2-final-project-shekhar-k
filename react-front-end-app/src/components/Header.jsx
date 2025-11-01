@@ -19,7 +19,8 @@ export default function Header() {
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/about">About</Link></li>
-                    <li><Link to="/moments-matter">Moments Matter</Link></li>
+                    <li><Link to="/moments">Moments Matter</Link></li>
+                    <li><Link to="/intentional">Be Intentional</Link></li>
                     <li><Link to="/explore">Explore</Link></li>
                     <li><Link to="/comment">Comment</Link></li>
                 </ul>
