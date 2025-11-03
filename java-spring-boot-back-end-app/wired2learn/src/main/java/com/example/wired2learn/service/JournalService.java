@@ -54,6 +54,24 @@ public class JournalService {
         return responseList;
     }
 
+    // READ ALL BY USER
+    public List<JournalResponseDTO> getJournalsByUser(Long id) {
+        User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found with id: " + id));
+
+        List<Journal> journals = journalRepository.findByUser(user);
+
+        // Create a new ArrayList to hold the JournalResponseDTOs
+        List<JournalResponseDTO> responseList = new ArrayList<>();
+
+        // Convert each journal object to JournalResponseDTO and add it to the response list
+        for (Journal journal : journals) {
+            responseList.add(mapToResponse(journal));
+        }
+
+        // return the list of JournalResponseDTOs
+        return responseList;
+    }
+
     // READ BY ID
     public JournalResponseDTO getJournalById(Long id) {
 
@@ -73,7 +91,6 @@ public class JournalService {
         User user = userRepository.findById(dto.getUserId()).orElseThrow(() -> new RuntimeException("User not found with id:" + dto.getUserId()));
 
         // Update journal fields
-        journal.setUser(user);
         journal.setTitle(dto.getTitle());
         journal.setDate(dto.getDate());
         journal.setEntry(dto.getEntry());

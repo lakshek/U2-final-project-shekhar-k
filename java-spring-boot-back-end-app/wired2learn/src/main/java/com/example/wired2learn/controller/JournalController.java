@@ -29,6 +29,12 @@ public class JournalController {
         return ResponseEntity.ok(journalService.getAllJournals());
     }
 
+    // Get all journals for a specific user
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<List<JournalResponseDTO>> getJournalByUser(@PathVariable Long userId) {
+        return ResponseEntity.ok(journalService.getJournalsByUser(userId));
+    }
+
     // Get a Journal by id
     @GetMapping("/{id}")
     public ResponseEntity<JournalResponseDTO> getJournalById(@PathVariable Long id) {
