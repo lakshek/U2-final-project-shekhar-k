@@ -30,7 +30,7 @@ export default function App() {
               <Route path="/moments" element={<MomentsMatterPage />} />
               <Route path="intentional" element={<BeIntentionalPage />} />
               <Route path="/explore" element={<ExplorePage />} />
-              <Route path="/comment" element={<CommentPage />} />
+              <Route path="/journal" element={<CommentPage />} />
               <Route path="/register" element={<RegisterPage />} />
               <Route path="/login" element={<LoginPage />} />
             </Routes>

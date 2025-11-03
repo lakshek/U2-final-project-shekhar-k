@@ -3,26 +3,51 @@ import { Link, useNavigate } from 'react-router-dom';
 
 // import image 
 import BrainIcon from '../assets/BrainIcon.jpg';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Header() {
 
     const navigate = useNavigate();
-    const userName = localStorage.getItem('userName');
-    
+        
     // Toggle menu visibility
-    const [menuOpen, setMenuOpen] = useState(false)
+    const [userName, setUserName] = useState(sessionStorage.getItem('userName'));
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    // Sync state with localStorage in case it changes elsewhere
+    useEffect(() => {
+        // Handle login/register updates (custom event)
+        const updateUser = () => {
+            setUserName(sessionStorage.getItem('userName'));
+        };
+        window.addEventListener('userChange', updateUser);
+
+        // Automatically logout when tab/window closes
+        const handleUnload = () => {
+            sessionStorage.clear();
+        };
+        window.addEventListener('beforeunload', handleUnload);
+
+        // Ensure menu is closed when header loads
+        setMenuOpen(false);
+
+        return () => {
+            window.removeEventListener('userChange', updateUser);
+            window.removeEventListener('beforeunload', handleUnload);
+        };
+    }, []);
 
     // Handle logout function - blank out local storage and navigate to login page
     function handleLogout() {
-        localStorage.removeItem('userName');
-        localStorage.removeItem(userId);
+        sessionStorage.removeItem('userName');
+        sessionStorage.removeItem('userId');
+        setUserName(null);
+        setMenuOpen(false);
         navigate('/login');
     }
 
     // Toggle menu
     function toggleMenu() {
-        setMenuOpen(!menuOpen);
+        setMenuOpen(prev => !prev);
     }
 
     // Close menu when a navigation link is clicked

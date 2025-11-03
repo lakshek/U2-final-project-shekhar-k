@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
+import { registerUser } from "../api/auth";
 
 
 export default function RegisterPage() {
@@ -10,7 +11,7 @@ export default function RegisterPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
-    const [loading, setLoading] = useState("");
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
     async function handleSubmit(e) {
@@ -26,11 +27,14 @@ export default function RegisterPage() {
             const user = await registerUser({ name, email, password });
             
             // Save necessary fields for personalization
-            localStorage.setItem("userName", user.getName ? user.getName() : user.name);
-            localStorage.setItem("userId", user.id);
+            sessionStorage.setItem('userName', user.name);
+            sessionStorage.setItem('userId', user.id);
+
+            // Notify header instantly
+            window.dispatchEvent(new Event('userName'));
 
             // Navigate to Home page
-            navigate("/");
+            navigate("/login");
         } catch (err) {
             setError(err.message || "Registration failed");
         } finally {
