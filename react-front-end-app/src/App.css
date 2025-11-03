@@ -253,13 +253,13 @@ input, textarea {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Comment List */
-.comment-ul {
+/* Journal List */
+.journal-ul {
     list-style: none;
     padding: 20px;
 }
 
-.comment-li {
+.journal-li {
     background-color: rgb(255, 255, 255);
     margin-bottom: 10px;
     padding: 15px;

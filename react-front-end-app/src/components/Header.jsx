@@ -86,7 +86,7 @@ export default function Header() {
                     <li><NavLink to="/moments" onClick={handleNavClick}>Moments Matter</NavLink></li>
                     <li><NavLink to="/intentional" onClick={handleNavClick}>Be Intentional</NavLink></li>
                     <li><NavLink to="/explore" onClick={handleNavClick}>Explore</NavLink></li>
-                    <li><NavLink to="/journal" onClick={handleNavClick}>Comment</NavLink></li>
+                    <li><NavLink to="/journal" onClick={handleNavClick}>Journal</NavLink></li>
 
                     {/* Conditional rendering for Login/Register or logout */}
                     {!userName ? (

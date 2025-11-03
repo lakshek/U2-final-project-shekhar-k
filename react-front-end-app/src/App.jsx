@@ -8,7 +8,7 @@ import HomePage from './pages/HomePage'
 import MomentsMatterPage from './pages/MomentsMatterPage'
 import BeIntentionalPage from './pages/BeIntentionalPage'
 import ExplorePage from './pages/ExplorePage'
-import CommentPage from './pages/CommentPage'
+import CommentPage from './pages/JournalPage'
 import RegisterPage from './pages/RegisterPage'
 import LoginPage from './pages/LoginPage'
 
