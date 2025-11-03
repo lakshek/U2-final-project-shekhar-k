@@ -99,6 +99,11 @@ nav a {
     transition: background-color 0.3s;
 }
 
+nav a.active {
+    text-decoration: underline;
+    color: rgb(0, 80, 160);
+}
+
 nav a:hover {
     background-color: rgb(210, 230, 255);
     text-decoration: underline;

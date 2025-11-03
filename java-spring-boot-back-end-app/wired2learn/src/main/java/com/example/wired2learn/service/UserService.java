@@ -1,5 +1,6 @@
 package com.example.wired2learn.service;
 
+import com.example.wired2learn.dto.LoginRequestDTO;
 import com.example.wired2learn.dto.UserRequestDTO;
 import com.example.wired2learn.dto.UserResponseDTO;
 import com.example.wired2learn.model.User;
@@ -32,6 +33,11 @@ public class UserService {
     // CREATE
     public UserResponseDTO createUser(UserRequestDTO dto) {
 
+        // Check if email exists
+        if (userRepository.existsByEmail(dto.getEmail())) {
+            throw new RuntimeException("Email already registered.");
+        }
+
         // Hash the password before saving
         String hashedPassword = passwordEncoder.encode(dto.getPassword());
 
@@ -43,6 +49,23 @@ public class UserService {
 
         // Convert the saved User object to a UserResponseDTO and return it
         return mapToResponse(savedUser);
+    }
+
+    // AUTHENTICATE USER (LOGIN)
+    public UserResponseDTO authenticateUser(LoginRequestDTO loginDto) {
+        // Check if email exists
+        User user = userRepository.findByEmail(loginDto.getEmail())
+                .orElseThrow(() -> new RuntimeException("Invalid email or password."));
+
+        // If email exists, check if password exists
+        boolean matches = passwordEncoder.matches(loginDto.getPassword(), user.getPassword());
+
+        // If password doesn't match, throw an error
+        if (!matches) {
+            throw new RuntimeException("Invalid email or password.");
+        }
+
+        return mapToResponse(user);
     }
 
     // READ ALL

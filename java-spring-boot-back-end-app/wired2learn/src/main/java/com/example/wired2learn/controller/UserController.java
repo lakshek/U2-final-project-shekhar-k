@@ -1,5 +1,6 @@
 package com.example.wired2learn.controller;
 
+import com.example.wired2learn.dto.LoginRequestDTO;
 import com.example.wired2learn.dto.UserRequestDTO;
 import com.example.wired2learn.dto.UserResponseDTO;
 import com.example.wired2learn.service.UserService;
@@ -16,10 +17,16 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    // Create User
+    // Create User / Register
     @PostMapping
     public ResponseEntity<UserResponseDTO> createUser(@RequestBody UserRequestDTO userRequestDTO) {
         return ResponseEntity.ok(userService.createUser(userRequestDTO));
+    }
+
+    // Login
+    @PostMapping("/login")
+    public ResponseEntity<UserResponseDTO> login(@RequestBody LoginRequestDTO loginRequestDTO) {
+        return ResponseEntity.ok(userService.authenticateUser(loginRequestDTO));
     }
 
     // Get all Users

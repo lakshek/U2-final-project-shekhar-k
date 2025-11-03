@@ -45,21 +45,30 @@ export default function LoginPage() {
 
     return (
         <div className="auth-form">
+            
             <h2>Login</h2>
+            
             <form onSubmit={handleSubmit}>
                 <label>
                     Email
                     <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
                 </label>
+                
                 <label>
                     Password
                     <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
                 </label>
+                
                 {error && <div style={{color: 'red'}}>{error}</div> }
-                <button type="submit" disabled={loading}>
-                    {loading ? 'Signing in...' : 'Sign-in'}
-                </button>
+                
+                {/* Use Button component */}
+                <Button
+                    type ="submit"
+                    label = {loading ? 'Signing in...' : 'Sign-in'}
+                />
+
             </form>
+
         </div>
     )
     

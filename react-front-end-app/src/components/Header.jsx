@@ -1,5 +1,6 @@
 // Import Link from router DOM
-import { Link, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import Button from './Button';
 
 // import image 
 import BrainIcon from '../assets/BrainIcon.jpg';
@@ -81,21 +82,25 @@ export default function Header() {
             <nav className={menuOpen ? "nav-open" : ""}>
 
                 <ul>
-                    <li><Link to="/" onClick={handleNavClick}>Home</Link></li>
-                    <li><Link to="/moments" onClick={handleNavClick}>Moments Matter</Link></li>
-                    <li><Link to="/intentional" onClick={handleNavClick}>Be Intentional</Link></li>
-                    <li><Link to="/explore" onClick={handleNavClick}>Explore</Link></li>
-                    <li><Link to="/comment" onClick={handleNavClick}>Comment</Link></li>
+                    <li><NavLink to="/" onClick={handleNavClick}>Home</NavLink></li>
+                    <li><NavLink to="/moments" onClick={handleNavClick}>Moments Matter</NavLink></li>
+                    <li><NavLink to="/intentional" onClick={handleNavClick}>Be Intentional</NavLink></li>
+                    <li><NavLink to="/explore" onClick={handleNavClick}>Explore</NavLink></li>
+                    <li><NavLink to="/journal" onClick={handleNavClick}>Comment</NavLink></li>
 
                     {/* Conditional rendering for Login/Register or logout */}
                     {!userName ? (
                         <>
-                            <li><Link to="/register" onClick={handleNavClick}>Register</Link></li>
-                            <li><Link to="/login" onClick={handleNavClick}>Login</Link></li>
+                            <li><NavLink to="/register" onClick={handleNavClick}>Register</NavLink></li>
+                            <li><NavLink to="/login" onClick={handleNavClick}>Login</NavLink></li>
                         </>
                     ) : (
                         <li>
-                            <button onClick={handleLogout}>Logout ({userName})</button>
+                            <Button
+                                type = "button"
+                                onClick={handleLogout}
+                                label = {`Logout (${userName})`}
+                            />
                         </li>
                     )}
                 </ul>

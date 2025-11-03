@@ -24,7 +24,7 @@ public class User {
     private String password;
 
     @Column(name = "user_role", nullable = false)
-    private String role;
+    private String role = "USER";
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false)
@@ -46,7 +46,11 @@ public class User {
         this.name = name;
         this.email = email;
         this.password = password;
-        this.role = role;
+        if (role == "null" || role.isBlank()) {
+            this.role = "USER";
+        } else {
+            this.role = role;
+        }
     }
 
     // Getters and Setters

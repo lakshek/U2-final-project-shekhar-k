@@ -44,25 +44,35 @@ export default function RegisterPage() {
 
     return (
         <div className="auth-form">
+            
             <h2>Register</h2>
+            
             <form onSubmit={handleSubmit}>
                 <label>
                     Name
                     <input value={name} onChange={e => setName(e.target.value)} />
                 </label>
+                
                 <label>
                     Email
                     <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
                 </label>
+                
                 <label>
                     Password
                     <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
                 </label>
+                
                 {error && <div style={{color: "red"}}>{error}</div>}
-                <button type="submit" disabled={loading}>
-                    {loading ? "Registering..." : "Register"}
-                </button>
+            
+                {/* Use Button component */}
+                <Button
+                    type = "submit"
+                    label = {loading ? "Registering..." : "Register"}
+                />
+
             </form>
+
         </div>
     );
 }

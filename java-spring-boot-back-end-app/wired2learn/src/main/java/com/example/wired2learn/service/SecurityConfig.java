@@ -17,4 +17,16 @@ public class SecurityConfig {
         // BCryptPasswordEncoder is a secure way to convert any password to hashed string
         return new BCryptPasswordEncoder();
     }
+
+    // Configure HTTP security
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+                .csrf(csrf -> csrf.disable())      // Disable CSRF since frontend calls APIs directly
+                .authorizeHttpRequests(auth -> auth
+                        .anyRequest().permitAll()      // Allow all endpoints (no login required on backend)
+                );
+
+        return http.build();
+    }
 }
