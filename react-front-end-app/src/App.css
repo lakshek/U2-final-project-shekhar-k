@@ -26,22 +26,57 @@ div {
 header {
     background-color: rgb(228, 228, 228);
     padding: 20px;
-    text-align: center;
+    position: relative;
     border-bottom: 2px solid rgb(178, 177, 177);   
+}
+
+header > div {
+    display: flex;                  /* horizontal layout */
+    align-items: center;            /* vertical alignment */
+    justify-content: center;        /* center logo and title */
+    position: relative;
+    flex-wrap: wrap;                /* allows wrapping on very small screens */
+    padding-inline: 20px;           /* horizontal padding consistent with header */
+}
+
+.header-top {
+    display: flex;
+    justify-content: center; /* center logo + title horizontally */
+    align-items: center;
+    position: relative; /* for absolute hamburger positioning */
+}
+
+/* Logo + title flex */
+.logo-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 header img {
     width: 10%;
     height: auto;
-    vertical-align: middle;
     margin: 10px;
-    padding: 0px 0px 12px 0px;
 }
 
 header h1 {
-    display: inline;
     font-size: clamp(1.5rem, 3.5vw, 2.25rem);
     color: rgb(25, 60, 95);
+    margin: 0;
+}
+
+/* Hamburger button - hidden on desktop */
+.menu-toggle {
+    display: none;                  
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: rgb(25, 60, 95);
+    cursor: pointer;
+    position: absolute;     /* position to the right */
+    right: 20px;
+    top: 50%;
+
 }
 
 nav ul {
@@ -59,7 +94,7 @@ nav a {
     text-decoration: none;
     color: rgb(25, 60, 95);
     font-weight: bold;
-    padding: 8px 12px;
+    padding: 6px 12px;
     border-radius: 6px;
     transition: background-color 0.3s;
 }
@@ -157,6 +192,16 @@ video {
 
 .topic-img {
     width: 30%;
+}
+
+/* Login/Register */
+.auth-form {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgb(245,245,245);
+    border-radius: 10px;
+    border: 1px solid rgb(200,200,200);
 }
 
 /* Table */
@@ -263,3 +308,46 @@ select:focus {
         opacity: 1;
     }
 }
+
+/* Hamburger Menu Styles */
+.menu-toggle {
+    display: none; /* hidden on large screens */
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: rgb(25, 60, 95);
+    cursor: pointer;
+    margin-left: auto;
+}
+
+/* Show hamburger icon and hide full nav on smaller screens */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgb(228, 228, 228);
+        border-top: 2px solid rgb(178, 177, 177);
+        width: 100%;
+        padding: 5px 0;
+        margin-top: 10px;
+        position: absolute;     /* make menu dropdown below header */
+        top: 100%;              /* directly below header */
+        left: 0;
+        z-index: 1000;          /* on top of other content */
+    }
+
+    /* Show navigation links when menu is open */
+    nav.nav-open ul {
+        display: flex;
+    }
+
+    nav li {
+        margin: 5px 0;
+    }
+}
+
