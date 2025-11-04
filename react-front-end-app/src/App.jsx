@@ -8,7 +8,8 @@ import HomePage from './pages/HomePage'
 import MomentsMatterPage from './pages/MomentsMatterPage'
 import BeIntentionalPage from './pages/BeIntentionalPage'
 import ExplorePage from './pages/ExplorePage'
-import CommentPage from './pages/JournalPage'
+import JournalPage from './pages/JournalPage'
+import ResourcePage from './pages/ResourcePage'
 import RegisterPage from './pages/RegisterPage'
 import LoginPage from './pages/LoginPage'
 
@@ -30,7 +31,8 @@ export default function App() {
               <Route path="/moments" element={<MomentsMatterPage />} />
               <Route path="intentional" element={<BeIntentionalPage />} />
               <Route path="/explore" element={<ExplorePage />} />
-              <Route path="/journal" element={<CommentPage />} />
+              <Route path="/journal" element={<JournalPage />} />
+              <Route path="/resource" element={<ResourcePage />} />
               <Route path="/register" element={<RegisterPage />} />
               <Route path="/login" element={<LoginPage />} />
             </Routes>

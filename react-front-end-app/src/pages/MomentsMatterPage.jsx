@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import ReactMarkDown from 'react-markdown';
 
 // Import image used in Moments Matter page
+import Neuron from '../assets/Neuron.gif' 
 
 // Import long texts as variables used in Moments Matter page
 import { momentsIntroText, momentsExtendedText } from "../data/texts";
@@ -27,7 +28,15 @@ export default function MomentsMatterPage() {
 
             {/* Page heading and image */}
             <div>
+
                 <h2>Every Moment Matters</h2>
+
+                <img
+                    src={Neuron}
+                    alt="Neuron image showing signals moving from axon to dendrites"
+                    className='neuron-img'
+                />
+                
             </div>
 
             {/* Intro text. Use MarkDown to format text */}

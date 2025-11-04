@@ -44,6 +44,8 @@ export default function JournalPage() {
     }, []);
 
     async function fetchJournals() {
+        if (!userId) return;    // exit if not logged in
+
         setLoading(true);
         setError(null);
         try {

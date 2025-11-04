@@ -19,11 +19,11 @@ export default function HomePage() {
 
             <div>
                 {/* Page heading and image */}
-                <h2>Welcome to wired2learn</h2>
-                <h3>Thank you for visiting this site - intentionally</h3>
+                <h2>Thank you for visiting this site - intentionally</h2>
+
                 <img
                     src={BabyBrain}
-                    alt="baby's face with a brain having glowing neural connections surrounded by child's activities"
+                    alt="baby's face with the brain surrounded by bubbles of different activities"
                     className='babybrain-img'
                 />
            
