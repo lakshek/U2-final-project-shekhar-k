@@ -17,8 +17,8 @@ public class ResourceService {
     @Autowired
     private ResourceRepository resourceRepository;
 
-    @Autowired
-    private FavoriteRepository favoriteRepository;
+//    @Autowired
+//    private FavoriteRepository favoriteRepository;
 
     // CREATE
     public ResourceResponseDTO createResource(ResourceRequestDTO dto) {
@@ -84,9 +84,9 @@ public class ResourceService {
         Resource resource = resourceRepository.findById(id).orElseThrow(() -> new RuntimeException("Resource not found with id: " + id));
 
         // Check if favorite exists for the user. If favorite found, throw exception
-        if (favoriteRepository.existsByResource(resource)) {
-            throw new RuntimeException("Cannot delete resource. Favorites exist for this user. Delete favorites first.");
-        }
+//        if (favoriteRepository.existsByResource(resource)) {
+//            throw new RuntimeException("Cannot delete resource. Favorites exist for this user. Delete favorites first.");
+//        }
 
         resourceRepository.delete(resource);
     }

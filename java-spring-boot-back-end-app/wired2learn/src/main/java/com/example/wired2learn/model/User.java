@@ -35,8 +35,8 @@ public class User {
     private List<Journal> journals;
 
     // One user can have many favorites.
-    @OneToMany(mappedBy = "user")
-    private List<Favorite> favorites;
+//    @OneToMany(mappedBy = "user")
+//    private List<Favorite> favorites;
 
     // Constructors
     public User() {
@@ -94,7 +94,7 @@ public class User {
         return journals;
     }
 
-    public List<Favorite> getFavorites() {
-        return favorites;
-    }
+//    public List<Favorite> getFavorites() {
+//        return favorites;
+//    }
 }

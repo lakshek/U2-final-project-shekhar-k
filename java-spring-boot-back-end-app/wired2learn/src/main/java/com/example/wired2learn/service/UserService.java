@@ -27,8 +27,8 @@ public class UserService {
     @Autowired
     private JournalRepository journalRepository;
 
-    @Autowired
-    private FavoriteRepository favoriteRepository;
+//    @Autowired
+//    private FavoriteRepository favoriteRepository;
 
     // CREATE
     public UserResponseDTO createUser(UserRequestDTO dto) {
@@ -133,9 +133,9 @@ public class UserService {
         }
 
         // Check if favorite exists for the user. If favorite found, throw exception
-        if (favoriteRepository.existsByUser(user)) {
-            throw new RuntimeException("Cannot delete user. Favorites exist for this user. Delete favorites first.");
-        }
+//        if (favoriteRepository.existsByUser(user)) {
+//            throw new RuntimeException("Cannot delete user. Favorites exist for this user. Delete favorites first.");
+//        }
 
         userRepository.delete(user);
     }
