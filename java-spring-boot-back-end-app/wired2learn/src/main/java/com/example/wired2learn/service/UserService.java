@@ -4,7 +4,6 @@ import com.example.wired2learn.dto.LoginRequestDTO;
 import com.example.wired2learn.dto.UserRequestDTO;
 import com.example.wired2learn.dto.UserResponseDTO;
 import com.example.wired2learn.model.User;
-import com.example.wired2learn.repository.FavoriteRepository;
 import com.example.wired2learn.repository.JournalRepository;
 import com.example.wired2learn.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

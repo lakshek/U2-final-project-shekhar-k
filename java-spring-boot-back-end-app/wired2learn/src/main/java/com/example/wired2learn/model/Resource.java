@@ -36,9 +36,6 @@ public class Resource {
     @Column(name = "modified_at")
     private LocalDateTime modifiedAt;
 
-//    @OneToMany(mappedBy = "resource")
-//    private List<Favorite> favorites;
-
     // Constructors
     public Resource () {
     }
@@ -92,7 +89,4 @@ public class Resource {
         return modifiedAt;
     }
 
-//    public List<Favorite> getFavorites() {
-//        return favorites;
-//    }
 }

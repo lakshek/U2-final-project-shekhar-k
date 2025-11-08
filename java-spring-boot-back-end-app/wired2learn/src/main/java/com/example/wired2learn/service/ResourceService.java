@@ -3,7 +3,6 @@ package com.example.wired2learn.service;
 import com.example.wired2learn.dto.ResourceRequestDTO;
 import com.example.wired2learn.dto.ResourceResponseDTO;
 import com.example.wired2learn.model.Resource;
-import com.example.wired2learn.repository.FavoriteRepository;
 import com.example.wired2learn.repository.ResourceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
