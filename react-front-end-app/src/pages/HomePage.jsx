@@ -19,7 +19,7 @@ export default function HomePage() {
 
             <div>
                 {/* Page heading and image */}
-                <h2>Thank you for visiting this site - intentionally</h2>
+                <h2>Thank you for choosing awareness — and action</h2>
 
                 <img
                     src={BabyBrain}
@@ -37,12 +37,12 @@ export default function HomePage() {
             <div>
                 {/* Navigation button to Moments Matter page */}
                 <Link to="/moments" className='btn-link'>
-                    Moments Matter                
+                    Why do Moments Matter                
                 </Link>
 
                 {/* Navigation button to Be Intentional page */}
                 <Link to="intentional" className='btn-link'>
-                    Be Intentional
+                    Why Act with Purpose
                 </Link>
             </div>
 

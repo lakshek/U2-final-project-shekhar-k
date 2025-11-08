@@ -6,7 +6,7 @@ export default function ResourcePage() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 6;
+    const itemsPerPage = 3;
 
     useEffect(() => {
         async function fetchResources() {

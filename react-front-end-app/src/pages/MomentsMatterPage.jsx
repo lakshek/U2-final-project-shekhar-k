@@ -9,6 +9,7 @@ import ReactMarkDown from 'react-markdown';
 
 // Import image used in Moments Matter page
 import Neuron from '../assets/Neuron.gif' 
+import NeuralConnections from '../assets/NeuralConnections.jpg'
 
 // Import long texts as variables used in Moments Matter page
 import { momentsIntroText, momentsExtendedText } from "../data/texts";
@@ -47,7 +48,7 @@ export default function MomentsMatterPage() {
             {/* Show the button only if the extended text is not visible */}
             {!showExpanded && (
                 <button onClick={handleShowExpanded}>
-                    Why moments matter... biologically speaking
+                    What's going on in the brain...
                 </button>
             )}
 
@@ -56,9 +57,17 @@ export default function MomentsMatterPage() {
                 <div>
                     <ReactMarkDown>{momentsExtendedText}</ReactMarkDown>
 
+                    <img
+                        src={NeuralConnections}
+                        alt="Image showing neural connections in the first two years of life"
+                        className='neural-connections-img'
+                    />
+
+                    <br></br>
+
                     {/* navigation to Be Intentional page */}
                     <Link to="/intentional" className="btn-link">
-                        Be Intentional
+                        How to Make Every Moment Matter
                     </Link>
                 </div>
             )}

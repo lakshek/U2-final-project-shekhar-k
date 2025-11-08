@@ -20,7 +20,7 @@ export default function ExplorePage() {
 
             <div>            
             
-                <h2>Baby's got the mic. 🎤 Hit it, Nu Ron.</h2>
+                <h2>Explore.. Learn.. Be Intentional</h2>
                 
                 {/* Use state variable to capture topic selection and .map() method to display the topic chosen */}
                 <select value={chosen} onChange={e => setChosen(e.target.value)} >
