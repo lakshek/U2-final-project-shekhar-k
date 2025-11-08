@@ -2,9 +2,9 @@
 
 // Home Page texts
 export const homeText = 
-`A **baby's brain is as intricate and enigmatic** as a celestial labyrinth. From birth to age six, it develops at an astonishing pace. By three, **the strides children make** in *movement, language, understanding, and adapting to our world* **are truly astounding**.  
+`A **baby's brain is** as **intricate and enigmatic** as a celestial labyrinth. From birth to age six, it develops at an astonishing pace. By three, **the strides children make** in *movement, language, understanding, and adapting to our world* **are truly astounding**.  
 
-These **early years** either build a strong, supportive **foundation** or a fragile, unreliable one, which **shapes all future learning, behavior, and health**.  
+These **early years** either **build a** strong, supportive **foundation** or a fragile, unreliable one, **which shapes all future learning, behavior, and health**.  
 
 It is imperative to **prepare environments that nurture holistic development** at every stage.  
 > Your child's brain is *growing every moment*, shaped by **accident or** by **intention**.  
@@ -14,14 +14,14 @@ It is imperative to **prepare environments that nurture holistic development** a
 export const momentsIntroText =
 `**Every moment** in a baby's life **builds the architecture of the brain**. When babies are free to explore — touching, tasting, watching, and listening — they are wiring the foundations for all future learning, behavior, and health.  
 
-More than the toys, it's the **moments of connection** that matter most — when you meet their gaze, follow their curiosity, or let them lead the play. These moments create harmony between emotion and understanding, forming a strong, flexible base for lifelong growth.
+More than the toys, it's the **moments of connection** that **matter most** — when you meet their gaze, follow their curiosity, or let them lead the play. These moments create harmony between emotion and understanding, forming a strong, flexible base for lifelong growth.
 >Every look, word, and gesture shapes the brain's foundation.  
 >Every moment you share builds the world your child will stand on.`
 ;
 
 export const momentsExtendedText = 
 `---
-**Neurons — the brain's building blocks** — form the vast network of the nervous system. The brain contains about **100 billion neurons**, each connecting to tens of thousands of others. In the first six years of life, **over a million new neural connections form every second**, shaping how a child learns, feels, and grows.
+**Neurons — the brain's building blocks** — form the vast network of the nervous system. The **brain contains about 100 billion neurons**, each connecting to tens of thousands of others. In the first six years of life, **over a million new neural connections form every second**, shaping how a child learns, feels, and grows.
 
 Early childhood is a period of remarkable change when the brain's foundation is built. While development continues through adolescence and adulthood, these early years determine whether that foundation is strong and supportive — or fragile and unstable.`
 ;
