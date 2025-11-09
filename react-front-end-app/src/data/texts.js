@@ -27,11 +27,13 @@ Early childhood is a period of remarkable change when the brain's foundation is 
 ;
 
 export const intentionalText = 
-`**The environments** we create **either nurture independence or confine it**. **Babies thrive when given the space, time, and trust to move, explore, and discover at their own pace**. **A prepared environment is** not one filled with objects, but **one rich in freedom, safety, and opportunity to act on curiosity**.  
+`**The environments** we create **either nurture independence or confine it**.  
+**Babies thrive when given the space, time, and trust to move, explore, and discover at their own pace**.  
+**A prepared environment is** not one filled with objects, but **one rich in freedom, safety, and opportunity to act on curiosity**.  
 
 Being **intentional** means choosing presence over distraction, conversation over pacification, and exploration over control. It **means stepping back just enough for your child to step forward** — *developing confidence, creativity, and self-assurance* from the very start.
->Prepare environments that invite discovery. Interact with intention.
->Because every choice you make builds the reliability of your child's mind, body, and heart.`
+>Prepare environments that invite discovery. **Interact with intention**.  
+>Because **every choice** you make **builds** the reliability of **your child's mind, body, and heart.**`
 ;
 
 // Explore Page texts

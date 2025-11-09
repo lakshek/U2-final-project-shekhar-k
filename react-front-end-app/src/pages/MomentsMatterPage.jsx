@@ -48,7 +48,7 @@ export default function MomentsMatterPage() {
             {/* Show the button only if the extended text is not visible */}
             {!showExpanded && (
                 <button onClick={handleShowExpanded}>
-                    What's going on in the brain...
+                    What's going on in that brain...
                 </button>
             )}
 
@@ -73,5 +73,7 @@ export default function MomentsMatterPage() {
             )}
 
         </section>
+
     )
+
 }

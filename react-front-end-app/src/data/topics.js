@@ -8,13 +8,13 @@ import { babyInCribDesc, babyWithPacifier } from './texts'
 export const topics = [
     {
         id: 1,
-        name: "Baby in Crib = safety mode: activated 🔒",
+        name: "Trade the Crib for Curiosity",
         desc: babyInCribDesc,
         img: BabyInCrib
     },
     {
         id: 2,
-        name: "Baby with Pacifier: tiny plug, huge peace ✌️",
+        name: "Set the Pacifier Aside, Listen and Respond",
         desc: babyWithPacifier,
         img: BabyWithPacifier
     }

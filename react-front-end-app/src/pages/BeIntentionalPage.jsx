@@ -27,5 +27,7 @@ export default function BeIntentionalPage() {
             </div>
 
         </section>
+
     );
+    
 }

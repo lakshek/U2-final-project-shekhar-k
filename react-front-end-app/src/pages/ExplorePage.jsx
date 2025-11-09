@@ -24,7 +24,7 @@ export default function ExplorePage() {
                 
                 {/* Use state variable to capture topic selection and .map() method to display the topic chosen */}
                 <select value={chosen} onChange={e => setChosen(e.target.value)} >
-                    <option value="">C'mon! Take your pick... 👇</option>
+                    <option value="">Your choice matters — go ahead and pick one... 👇</option>
                     {topics.map(topic => (
                         <option key={topic.id} value={topic.id} >{topic.name}</option>
                     ))}
