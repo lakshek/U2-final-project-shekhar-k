@@ -29,10 +29,12 @@ public class Journal {
     @Column(name = "journal_entry", columnDefinition = "TEXT", nullable = false)
     private String entry;
 
+    // Update field automatically when created
     @CreationTimestamp
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
+    // Updated field automatically when updated
     @UpdateTimestamp
     @Column(name = "modified_at")
     private LocalDateTime modifiedAt;

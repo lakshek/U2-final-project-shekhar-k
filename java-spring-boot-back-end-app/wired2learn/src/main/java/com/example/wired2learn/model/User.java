@@ -26,6 +26,7 @@ public class User {
     @Column(name = "user_role", nullable = false)
     private String role = "USER";
 
+    // Update field automatically when created
     @CreationTimestamp
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;

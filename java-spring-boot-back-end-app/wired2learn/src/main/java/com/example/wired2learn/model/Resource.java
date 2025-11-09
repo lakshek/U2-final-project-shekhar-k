@@ -28,10 +28,12 @@ public class Resource {
     @Column(name = "resource_locked", nullable = false)
     private boolean locked;
 
+    // Update field automatically when created
     @CreationTimestamp
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
+    // Update field automatically when updated
     @UpdateTimestamp
     @Column(name = "modified_at")
     private LocalDateTime modifiedAt;
