@@ -1,5 +1,7 @@
 # Wired2Learn
 
+![Wired2Learn App Preview](./AppPreview.jpg)
+
 ---
 ## Project Description
 
@@ -80,7 +82,13 @@ Follow these steps to run **Wired2Learn** app locally:
     spring.jpa.show-sql=true
     spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
     ```
-    
+  - Update/Create .env file in wired2learn folder under java-spring-boot-back-end-app folder
+
+      ```
+      DB_USER=<your_userid>
+      DB_PASSWORD=<your_password> 
+      ```
+
 - #### Run the Spring Boot application  
 
   - Under java-spring-boot-back-end-app folder, navigate to
