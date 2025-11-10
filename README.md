@@ -82,7 +82,7 @@ Follow these steps to run **Wired2Learn** app locally:
     spring.jpa.show-sql=true
     spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
     ```
-  - Update/Create .env file in wired2learn folder under java-spring-boot-back-end-app folder
+  - Update/Create .env file in wired2learn folder under java-spring-boot-back-end-app/wired2learn folder
 
       ```
       DB_USER=<your_userid>
