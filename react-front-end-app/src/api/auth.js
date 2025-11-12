@@ -1,4 +1,3 @@
-
 export async function registerUser({ name, email, password }) {
     const payload = { name, email, password, role : 'User' };
 

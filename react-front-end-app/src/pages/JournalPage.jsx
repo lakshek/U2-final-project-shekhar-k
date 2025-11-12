@@ -29,12 +29,13 @@ export default function JournalPage() {
     // state variable to handle changes in entry input field
     const [entry, setEntry] = useState("");
 
-    // state variable to handle changes in journals
+    // state variable to hold the list of journals
     const [journals, setJournals] = useState([]);
 
-    // state to track edit mode
+    // state variable to track if the user is editing
     const [editingId, setEditingId] = useState(null);
 
+    // state variables to show loading and errors
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
@@ -53,13 +54,9 @@ export default function JournalPage() {
             // if (!response.ok) throw new Error('Failed to fetch journals.');
             const data = await response.json();
 
-            // If empty array, display a message instead of error
-            // if (data.length === 0) {
-            //     setJournals([]);    // keep empty list
-            // } else {
-                setJournals(data);
-            // }
-            
+            // save data in journals
+            setJournals(data);
+                
         } catch (err) {
             setError('Failed to fetch journals.');
         } finally {
